@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Cita Barbería</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, select, button { margin: 5px 0; padding: 5px; }
+    .cita { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Agendar Cita</h1>
+  
+  <div>
+    <label>Nombre y Apellido:</label><br>
+    <input type="text" id="nombre" placeholder="Nombre y Apellido">
+  </div>
+
+  <div>
+    <label>Hora de la cita:</label><br>
+    <select id="hora"></select>
+  </div>
+
+  <button onclick="agendarCita()">Agendar Cita</button>
+
+  <h2>Citas Agendadas</h2>
+  <div id="citasAgendadas"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
