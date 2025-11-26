@@ -6,113 +6,52 @@
   <title>Agendar Cita Barbería</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reset y estilo base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #e9ecef);
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #343a40;
-      margin-bottom: 30px;
-    }
-    
-    /* Formulario */
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-    form:hover { transform: translateY(-5px); }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #495057;
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: 1px solid #ced4da;
-      font-size: 16px;
-    }
-
-    input:focus, select:focus {
-      border-color: #007bff;
-      outline: none;
-      box-shadow: 0 0 5px rgba(0,123,255,0.3);
-    }
-
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-
-    /* Citas agendadas */
-    .cita {
-      max-width: 500px;
-      margin: 20px auto;
-      background: #e7f3ff;
-      padding: 15px;
-      border-radius: 10px;
-      color: #495057;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    @media(max-width: 550px){
-      form, .cita { padding: 20px; }
-    }
+    body { font-family: 'Montserrat', sans-serif; background: #f0f2f5; padding: 20px; }
+    h1 { text-align: center; color: #343a40; margin-bottom: 30px; }
+    form { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    label { display: block; margin-bottom: 5px; font-weight: 600; color: #495057; }
+    input, select, button { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ced4da; font-size: 16px; }
+    input:focus, select:focus { border-color: #007bff; outline: none; box-shadow: 0 0 5px rgba(0,123,255,0.3); }
+    button { background: #007bff; color: white; border: none; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #0056b3; }
+    .cita { max-width: 500px; margin: 10px auto; background: #e7f3ff; padding: 15px; border-radius: 10px; color: #495057; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    @media(max-width: 550px){ form, .cita { padding: 20px; } }
   </style>
 </head>
 <body>
 
-  <h1>Agendar Cita Barbería</h1>
+<h1>Agendar Cita Barbería</h1>
 
-  <!-- Formulario con Formspree -->
-  <form action="https://formspree.io/f/TU_ENDPOINT" method="POST">
-    <label>Nombre y Apellido:</label>
-    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+<form id="formCita" action="https://usebasin.com/f/24972c799b4b" method="POST">
+  <label>Nombre y Apellido:</label>
+  <input type="text" name="nombre" placeholder="Tu nombre completo" required>
 
-    <label>Fecha de la cita:</label>
-    <input type="date" name="fecha" required min="<?=hoy?>">
+  <label>Fecha de la cita:</label>
+  <input type="date" name="fecha" required>
 
-    <label>Hora de la cita:</label>
-    <select name="hora" required>
-      <option value="10:00">10:00</option>
-      <option value="10:40">10:40</option>
-      <option value="11:20">11:20</option>
-      <option value="12:00">12:00</option>
-      <option value="12:40">12:40</option>
-      <option value="13:20">13:20</option>
-      <option value="14:00">14:00</option>
-      <option value="14:40">14:40</option>
-      <option value="15:20">15:20</option>
-      <option value="16:00">16:00</option>
-      <option value="16:40">16:40</option>
-      <option value="17:20">17:20</option>
-      <option value="18:00">18:00</option>
-      <option value="18:40">18:40</option>
-    </select>
+  <label>Hora de la cita:</label>
+  <select name="hora" required>
+    <option value="10:00">10:00</option>
+    <option value="10:40">10:40</option>
+    <option value="11:20">11:20</option>
+    <option value="12:00">12:00</option>
+    <option value="12:40">12:40</option>
+    <option value="13:20">13:20</option>
+    <option value="14:00">14:00</option>
+    <option value="14:40">14:40</option>
+    <option value="15:20">15:20</option>
+    <option value="16:00">16:00</option>
+    <option value="16:40">16:40</option>
+    <option value="17:20">17:20</option>
+    <option value="18:00">18:00</option>
+    <option value="18:40">18:40</option>
+  </select>
 
-    <button type="submit">Agendar Cita</button>
-  </form>
+  <button type="submit">Agendar Cita</button>
+</form>
 
+<div id="citasAgendadas"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
